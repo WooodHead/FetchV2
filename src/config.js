@@ -1,5 +1,5 @@
 export default {
-  apiUrl: 'http://yoursite.com/api/'
+  apiUrl: 'https://fetch-2.herokuapp.com/'
 };
 const siteConfig = {
   siteName: 'FetchV2',
