@@ -10,7 +10,7 @@ import './setUpMap.css';
 const allSetUpServices = gql`
 query Setups {
   allOilAccountStates(filter: {
-    setup: false
+    setup: true
     }) {
       id
       oilService{

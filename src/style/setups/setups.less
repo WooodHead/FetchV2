@@ -67,42 +67,63 @@ SETUPS
       @media only screen and (max-width: 767px) {
         padding: 30px 20px;
       }
-
-      button:not(.isoAddSetUpBtn) {
-        font-size: @isoFontSize + 2;
-        color: @isoColor--DarkBlue;
-        width: 35px;
-        height: 35px;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        background-color: #ffffff;
-        outline: 0;
-        padding: 0;
-        border: 1px solid @isoColor--Border;
-        margin-left: -1px;
-        cursor: pointer;
+      .isoSetUpBtn {
+        background-color: @warning-color;
+        border: 0;
+        height: 30px;
+        padding: 0 15px;
+        margin-left: auto;
+        .isoBorderRadius(3px);
         .isoTransition;
-        .isoBorderRadius(0);
-
-        i {
-          width: 100%;
-        }
 
         span {
-          display: none;
-        }
-
-        &:first-child {
-          margin-left: 0;
+          font-size: @isoFontSize - 2;
+          font-weight: 400;
+          padding: 15px;
+          text-transform: uppercase;
+          color: #ffffff;
         }
 
         &:hover {
-          color: @primary-color;
-          background-color: darken(#ffffff, 1%);
+          background-color: darken(@warning-color, 4%);
         }
       }
+
+      // button:not(.isoAddSetUpBtn) {
+      //   font-size: @isoFontSize + 2;
+      //   color: @isoColor--DarkBlue;
+      //   width: 70px;
+      //   height: 35px;
+      //   display: flex;
+      //   align-items: center;
+      //   text-align: center;
+      //   justify-content: center;
+      //   background-color: #ffffff;
+      //   outline: 0;
+      //   padding: 0;
+      //   border: 1px solid @isoColor--Border;
+      //   margin-left: -1px;
+      //   cursor: pointer;
+      //   .isoTransition;
+      //   .isoBorderRadius(0);
+
+      //   i {
+      //     width: 100%;
+      //   }
+
+      //   span {
+      //     display: none;
+      //   }
+
+      //   &:first-child {
+      //     margin-left: 0;
+      //   }
+
+      //   &:hover {
+      //     color: @primary-color;
+      //     background-color: darken(#ffffff, 1%);
+      //   }
+      // }
 
       .isoAddSetUpBtn {
         background-color: @primary-color;
@@ -125,6 +146,8 @@ SETUPS
           background-color: darken(@primary-color, 4%);
         }
       }
+
+
     }
 
     @import './setupBox.less';

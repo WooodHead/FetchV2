@@ -6,11 +6,11 @@ import PageHeader from '../../components/utility/pageHeader';
 import LayoutWrapper from '../../components/utility/layoutWrapper';
 import IntlMessages from '../../components/utility/intlMessages';
 import SetUpList from '../../components/setUps/setUpList'
-import SetUpsMap from '../../components/maps/setUps/setUpMap';
+import CompletedSetUpsMap from '../../components/maps/setUps/completedSetUpsMap';
 
 const { Sider, Content } = Layout;
 
-class SetUpService extends React.Component {
+class CompletedSetUps extends React.Component {
   
 //   render() {
 //     console.log(this.props)
@@ -52,7 +52,7 @@ render() {
     } = this.props.SetUps
   return(
     <LayoutWrapper className="isomorphicSetUps" style={{ background: "none" }}>
-      <PageHeader><IntlMessages id="setUpPage.index" /></PageHeader>
+      <PageHeader><IntlMessages id="setUpsPage.completed.header" /></PageHeader>
         <Sider width="300" className="isoSetUpListBar" >
           <SetUpList
             setUps={allOilAccountStates}
@@ -60,7 +60,7 @@ render() {
         </Sider>
       {allOilAccountStates && allOilAccountStates.length > 0
         ? <Content className="isoSetUpBox">
-            <SetUpsMap 
+            <CompletedSetUpsMap 
               allSetUps={allOilAccountStates}
             />
           </Content> 
@@ -72,10 +72,10 @@ render() {
 }
 }
 
-const SetUpServiceQuery = gql`
+const CompletedSetUpServiceQuery = gql`
 query Setups {
   allOilAccountStates(filter: {
-    setup: false
+    setup: true
     }) {
       id
       oilService{
@@ -152,12 +152,12 @@ query Setups {
 // }
 // `;
 
-const SetUpServiceIndexPageWithData = withApollo(graphql(SetUpServiceQuery, {
+const CompletedSetUpServiceIndexPageWithData = withApollo(graphql(CompletedSetUpServiceQuery, {
   name: 'SetUps',
   options: {
     fetchPolicy: 'network-only'
   },
-})(SetUpService));
+})(CompletedSetUps));
 
-export default SetUpServiceIndexPageWithData
+export default CompletedSetUpServiceIndexPageWithData
 

@@ -70,7 +70,7 @@ query SetUps{
           size
         }
         oilAccountState(filter: {
-          setup: false
+          setup: true
         }) {
           id
         }

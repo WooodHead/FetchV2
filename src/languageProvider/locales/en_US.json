@@ -452,6 +452,8 @@
   "customerlist.editCustomer": "Save Changes",  
   "locationlist.searchLocations": "Search Locations",
   "setUpPage.index": "Pending Set Ups",
+  "setUpsPage.completed.header": "Completed Set Ups",
+  
   "setUpPage.searchLocations": "Search Set Up Locations",
   "setUpPage.setUpPageHeader": "New Customer Set Up Details",
   "notes.ChoseColor": "Choose a color for your note",

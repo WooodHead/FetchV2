@@ -1,8 +1,10 @@
 import React from 'react'
 import gql from 'graphql-tag';
+import { Button } from 'antd'
 import { graphql } from 'react-apollo'
 import { withRouter } from 'react-router-dom'
 import { Layout } from "antd";
+import Loading from '../Loading';
 import PageHeader from '../../components/utility/pageHeader';
 import LayoutWrapper from '../../components/utility/layoutWrapper';
 import IntlMessages from '../../components/utility/intlMessages';
@@ -28,6 +30,7 @@ class SetUpPage extends React.Component {
 
     this.state = {};
     this.backButton = this.backButton.bind(this)
+    this.buttonTest = this.buttonTest.bind(this)
   }
 
   backButton() {
@@ -35,10 +38,14 @@ class SetUpPage extends React.Component {
     this.props.history.push('/dashboard/setups')
   }
 
+  buttonTest () {
+    console.log('clicked...')
+  }
+
   onSubmit = async () => {
     // const {active, setup } = this.state;
-    await this.props.updateOilAccountState({variables: { id: this.props.data.Location.services[0].oilService.oilAccountState.id, active: true, setup: true }});
-    this.props.history.push('/dashboard/setups')
+    await this.props.updateOilAccountState({variables: { id: this.props.data.SetUpService.service.oilService.oilAccountState.id, active: false, setup: true }});
+    this.props.history.push('/dashboard/pendingSetups')
 
     //window.location.pathname = '/setups'
   }
@@ -46,7 +53,11 @@ class SetUpPage extends React.Component {
 
   render() {
     console.log(this.props);
-    if (this.props.data && this.props.data.loading) { return (<div>Loading...</div>)}
+    if (this.props.data && this.props.data.loading) { 
+      return (
+        <Loading/>
+      )
+    }
     if (this.props.data && this.props.data.error) { return (<div>Error...</div>)}
     
   const FetchV2GoogleMap =  _.flowRight( withScriptjs, withGoogleMap ) (props => (
@@ -112,6 +123,11 @@ class SetUpPage extends React.Component {
                 location={this.props.data.SetUpService.service.location}
                 locationAttributes={locationAttributes}
               />
+            </Content>
+            <Content className="isoSetUpControl">
+
+              <Button onClick={this.onSubmit} className="isoSetUpBtn" type="primary">Complete Set Up</Button>
+
             </Content>
             </Layout>
           </Layout>
