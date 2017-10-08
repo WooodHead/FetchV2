@@ -15,6 +15,7 @@
   "sidebar.create": "Create",
   "sidebar.locations": "Locations",
   "sidebar.setups":"Set Ups",
+  "sidebar.trucks":"Trucks",
   "sidebar.pendingSetups": "Pending Set Ups", 
   "sidebar.completedSetUps": "Completed Set Ups",
   "sidebar.shuffle": "Shuffle",

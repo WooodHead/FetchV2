@@ -168,6 +168,16 @@ class Sidebar extends Component {
               </Link>
             </Menu.Item>  */}
             </SubMenu>
+            <Menu.Item key="trucks">
+            <Link to={`${url}/trucks`}>
+                <span className="isoMenuHolder" style={submenuColor}>
+                  <i className="ion-android-bus" />
+                  <span className="nav-text">
+                    <IntlMessages id="sidebar.trucks" />
+                  </span>
+                </span>
+              </Link>
+            </Menu.Item>
 
 
             <Menu.Item key="contacts">
