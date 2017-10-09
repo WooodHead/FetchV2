@@ -12,32 +12,7 @@ const { Sider, Content } = Layout;
 
 class SetUpService extends React.Component {
   
-//   render() {
-//     console.log(this.props)
-//     if (this.props.SetUps && this.props.SetUps.loading) { return (<div>Loading...</div>)}
-//     console.log(this.props.SetUps.error)
-//     if (this.props.SetUps && this.props.SetUps.error) { return (<div>Error...</div>)}
-    
-//       const {
-//         allSetUpServices
-//       } = this.props.SetUps
-//     return(
-//       <LayoutWrapper className="isomorphicSetUps" style={{ background: "none" }}>
-//         <PageHeader><IntlMessages id="setUpPage.index" /></PageHeader>
-//             <Sider width="300" className="isoSetUpListBar" >
-//               <PendingSetUpList
-//                 setUps={allSetUpServices}
-//               />
-//             </Sider>
-//           <Content>
-//             <SetUpsMap 
-//               allSetUps={allSetUpServices}
-//             />
-//           </Content>
-//       </LayoutWrapper>    
-//     )
-//   }
-// }
+
 render() {
   console.log(this.props)
   if (this.props.SetUps && this.props.SetUps.loading) { 
